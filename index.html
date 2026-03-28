@@ -372,7 +372,7 @@ body {
   <!-- HERO -->
   <section class="hero">
     <video autoplay muted loop playsinline preload="auto" poster="">
-      <source src="hero-video.mp4" type="video/mp4">
+      <source src="hero-video-v2.mp4" type="video/mp4">
     </video>
     <div class="hero-body">
       <h1>Kit com mais de <strong>50 arquivos 100% editáveis para retrovisor/carro</strong>. Ideal para personalizar, divulgar e vender mais.</h1>
@@ -452,7 +452,7 @@ body {
       </div>
       <div class="faq-item">
         <h6>🔒 A compra é segura?</h6>
-        <p>100% segura!  com garantia de 7 dias e reembolso total se não gostar.</p>
+        <p>100% segura! com garantia de 7 dias e reembolso total se não gostar.</p>
       </div>
     </div>
   </section>
@@ -477,5 +477,88 @@ body {
   </footer>
 
 </div>
+
+<!-- SOCIAL PROOF POPUP -->
+<div id="sp-popup" style="
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%) translateY(120px);
+  width:calc(100% - 32px);
+  max-width:400px;
+  background:#fff;
+  border-radius:12px;
+  box-shadow:0 4px 20px rgba(0,0,0,0.15);
+  padding:14px 16px;
+  z-index:9999;
+  transition:transform 0.45s cubic-bezier(.175,.885,.32,1.275), opacity 0.4s;
+  opacity:0;
+  border-left:4px solid #27ae60;
+">
+  <p id="sp-text" style="
+    font-family:'Nunito',sans-serif;
+    font-size:14px;
+    color:#2c2c2c;
+    margin:0;
+    line-height:1.5;
+  "></p>
+</div>
+
+<script>
+(function(){
+  var people = [
+    {n:"Ana Lima", c:"São Paulo, SP"},
+    {n:"Carla Souza", c:"Rio de Janeiro, RJ"},
+    {n:"Fernanda Costa", c:"Belo Horizonte, MG"},
+    {n:"Juliana Melo", c:"Curitiba, PR"},
+    {n:"Patrícia Rocha", c:"Salvador, BA"},
+    {n:"Mariana Dias", c:"Fortaleza, CE"},
+    {n:"Beatriz Oliveira", c:"Manaus, AM"},
+    {n:"Camila Ferreira", c:"Porto Alegre, RS"},
+    {n:"Letícia Nunes", c:"Recife, PE"},
+    {n:"Roberta Alves", c:"Goiânia, GO"},
+    {n:"Simone Castro", c:"Belém, PA"},
+    {n:"Vanessa Lima", c:"Maceió, AL"},
+    {n:"Priscila Gomes", c:"Natal, RN"},
+    {n:"Daniela Martins", c:"Campo Grande, MS"},
+    {n:"Aline Barbosa", c:"João Pessoa, PB"},
+    {n:"Renata Cardoso", c:"São Luís, MA"},
+    {n:"Luciana Pereira", c:"Teresina, PI"},
+    {n:"Tâmara Fonseca", c:"Florianópolis, SC"},
+    {n:"Monique Silva", c:"Vitória, ES"},
+    {n:"Gabriela Torres", c:"Cuiabá, MT"},
+    {n:"Michele Freitas", c:"Aracaju, SE"},
+    {n:"Andressa Lopes", c:"Porto Velho, RO"},
+    {n:"Cristiane Ramos", c:"Macapá, AP"},
+    {n:"Jéssica Moura", c:"Palmas, TO"},
+    {n:"Eliane Borges", c:"Rio Branco, AC"}
+  ];
+
+  var popup = document.getElementById('sp-popup');
+  var textEl = document.getElementById('sp-text');
+
+  function shuffle(arr){ return arr.sort(function(){ return Math.random()-.5; }); }
+  var order = shuffle(people.map(function(_,i){ return i; }));
+  var orderIdx = 0;
+
+  function show(){
+    if(orderIdx >= order.length){ orderIdx = 0; order = shuffle(people.map(function(_,i){ return i; })); }
+    var p = people[order[orderIdx++]];
+    textEl.innerHTML = '<strong>' + p.n + '</strong> de <strong>' + p.c + '</strong> acabou de adquirir o pack 🎉';
+    popup.style.transform = 'translateX(-50%) translateY(0)';
+    popup.style.opacity = '1';
+    setTimeout(function(){
+      popup.style.transform = 'translateX(-50%) translateY(120px)';
+      popup.style.opacity = '0';
+    }, 3500);
+  }
+
+  setTimeout(function(){
+    show();
+    setInterval(show, 5000);
+  }, 3000);
+})();
+</script>
+
 </body>
 </html>
