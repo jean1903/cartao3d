@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Milions Pack — Cartão para Carro</title>
+<meta name="description" content="Kit com mais de 50 arquivos 100% editáveis para retrovisor/carro. Ideal para personalizar, divulgar e vender mais.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+img, video { display: block; max-width: 100%; }
+a { text-decoration: none; }
+
+/* ─── BASE ─── */
+:root {
+  --pink:      #cc889d;
+  --pink-dark: #945c6d;
+  --pink-light:#f9eef2;
+  --green:     #27ae60;
+  --green-dark:#1e8449;
+  --dark:      #2c2c2c;
+  --gray:      #555;
+  --brown:     #9c6b52;
+  --white:     #fff;
+  --radius:    12px;
+  --ff:        'Nunito', sans-serif;
+  --ff2:       'Inter', sans-serif;
+}
+
+html { font-size: 16px; }
+
+body {
+  font-family: var(--ff);
+  background: #fff;
+  color: var(--dark);
+  overflow-x: hidden;
+}
+
+.page {
+  max-width: 430px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+/* ─── HERO ─── */
+.hero {
+  background: #000;
+  position: relative;
+}
+
+.hero video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.hero-body {
+  background: var(--pink-light);
+  padding: 28px 20px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+}
+
+.hero-body h1 {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--pink-dark);
+  line-height: 1.6;
+}
+
+.hero-body h1 strong {
+  font-weight: 800;
+  color: var(--pink-dark);
+}
+
+.btn-cta-main {
+  display: block;
+  width: 100%;
+  background: var(--green);
+  color: #fff;
+  font-family: var(--ff2);
+  font-size: 20px;
+  font-weight: 700;
+  padding: 18px;
+  border-radius: var(--radius);
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 18px rgba(39,174,96,0.35);
+  transition: background .2s, transform .1s;
+}
+.btn-cta-main:active { background: var(--green-dark); transform: scale(.98); }
+
+.secure-seal {
+  width: 210px;
+  opacity: .9;
+}
+
+/* ─── STRIP ─── */
+.strip {
+  background: var(--pink);
+  padding: 16px 20px;
+  text-align: center;
+}
+.strip h2 {
+  font-family: var(--ff2);
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+}
+
+/* ─── RECEIVE ─── */
+.receive {
+  background: #fff;
+  padding: 32px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.receive img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.1);
+}
+
+.bonus-box {
+  background: var(--pink-light);
+  border-left: 4px solid var(--pink);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bonus-box p {
+  font-size: 15px;
+  color: var(--pink-dark);
+  line-height: 1.5;
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.bonus-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--pink-dark);
+  line-height: 1.4;
+  font-weight: 400 !important;
+}
+
+/* ─── URGENCY ─── */
+.urgency {
+  background: var(--pink);
+  padding: 18px 20px;
+  text-align: center;
+}
+.urgency p {
+  font-family: var(--ff2);
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+/* ─── PRICE ─── */
+.price-section {
+  background: #fff;
+  padding: 36px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.price-from {
+  font-size: 15px;
+  color: var(--gray);
+}
+.price-from s { color: #aaa; }
+
+.price-main {
+  font-family: var(--ff2);
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--green);
+  line-height: 1;
+  letter-spacing: -.01em;
+}
+.price-main span {
+  font-size: 22px;
+  font-weight: 700;
+  vertical-align: super;
+  line-height: 1;
+}
+
+.price-installment {
+  font-size: 13px;
+  color: var(--gray);
+}
+
+.btn-cta-price {
+  display: block;
+  width: 100%;
+  background: var(--green);
+  color: #fff;
+  font-family: var(--ff2);
+  font-size: 17px;
+  font-weight: 700;
+  padding: 18px;
+  border-radius: 32px;
+  text-align: center;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 18px rgba(39,174,96,0.35);
+  transition: background .2s, transform .1s;
+}
+.btn-cta-price:active { background: var(--green-dark); transform: scale(.98); }
+
+.guarantee {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f0faf4;
+  border-radius: 10px;
+  padding: 12px 16px;
+  width: 100%;
+}
+.guarantee-icon { font-size: 24px; }
+.guarantee-text {
+  font-size: 13px;
+  color: var(--green-dark);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* ─── FAQ ─── */
+.faq-section {
+  background: var(--pink-light);
+  padding: 36px 20px;
+}
+
+.faq-section h3 {
+  font-family: var(--ff2);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--pink-dark);
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.faq-item {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: 0 1px 6px rgba(0,0,0,.07);
+}
+
+.faq-item h6 {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--pink-dark);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.faq-item p {
+  font-size: 13px;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+/* ─── DISCLAIMER ─── */
+.disclaimer {
+  background: #fff;
+  padding: 28px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.disclaimer p {
+  font-family: var(--ff2);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+.c-brown { color: var(--brown); }
+.c-dark  { color: var(--dark); }
+
+/* ─── ABOUT ─── */
+.about-section {
+  background: var(--pink-light);
+  padding: 36px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+}
+
+.about-brand {
+  font-family: var(--ff2);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--pink);
+  letter-spacing: .08em;
+}
+
+.about-bio {
+  font-size: 13px;
+  color: var(--pink-dark);
+  line-height: 1.8;
+  max-width: 360px;
+}
+
+.btn-cta-final {
+  display: block;
+  width: 100%;
+  background: var(--pink);
+  color: #fff;
+  font-family: var(--ff2);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 18px;
+  border-radius: var(--radius);
+  text-align: center;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 14px rgba(204,136,157,.4);
+  transition: background .2s, transform .1s;
+}
+.btn-cta-final:active { background: var(--pink-dark); transform: scale(.98); }
+
+/* ─── FOOTER ─── */
+.footer {
+  background: var(--pink);
+  padding: 18px 20px;
+  text-align: center;
+}
+.footer p {
+  color: rgba(255,255,255,.85);
+  font-size: 12px;
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <section class="hero">
+    <video autoplay muted loop playsinline preload="auto" poster="">
+      <source src="hero-video.mp4" type="video/mp4">
+    </video>
+    <div class="hero-body">
+      <h1>Kit com mais de <strong>50 arquivos 100% editáveis para retrovisor/carro</strong>. Ideal para personalizar, divulgar e vender mais.</h1>
+      <a href="https://pay.kiwify.com.br/AcSC6Jg?afid=tSCPomcM" target="_blank" rel="nofollow" class="btn-cta-main">🛒 EU QUERO</a>
+      <img
+        src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=61,fit=crop/UiAmj3MFyvqnuzXx/pagamento-seguro-YleqLnzg7DTy39wp.webp"
+        alt="Pagamento Seguro"
+        class="secure-seal"
+      >
+    </div>
+  </section>
+
+  <!-- BANNER -->
+  <section class="strip">
+    <h2>✨ Confira tudo que você vai receber</h2>
+  </section>
+
+  <!-- O QUE RECEBE -->
+  <section class="receive">
+    <img
+      src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=750,h=304,fit=crop/UiAmj3MFyvqnuzXx/20-CJOu0GUReyqc9W3t.png"
+      alt="Conteúdo do pack"
+      loading="lazy"
+    >
+    <img
+      src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=750,h=304,fit=crop/UiAmj3MFyvqnuzXx/banner-de-site-promoassapso-de-verapso-montagem-de-fotos-rosa-6-nJ1Gxg5ZYuMgyp6o.png"
+      alt="Mais modelos do pack"
+      loading="lazy"
+    >
+
+    <div class="bonus-box">
+      <p>🎁 BÔNUS ESPECIAIS</p>
+      <div class="bonus-item">🎥 <span>Vídeo aula ensinando o uso do material</span></div>
+      <div class="bonus-item">📲 <span>Suporte via WhatsApp para dúvidas</span></div>
+      <div class="bonus-item">🔄 <span>Atualizações incluídas</span></div>
+    </div>
+  </section>
+
+  <!-- URGÊNCIA -->
+  <section class="urgency">
+    <p>⏳ Oferta com valor especial<br>até as 23:59h de hoje</p>
+  </section>
+
+  <!-- PREÇO -->
+  <section class="price-section">
+    <p class="price-from">De <s>R$ 69,90</s> por apenas</p>
+    <p class="price-main"><span>R$</span> 12,90</p>
+    <p class="price-installment">Pagamento único • Acesso imediato</p>
+    <a href="https://pay.kiwify.com.br/AcSC6Jg?afid=tSCPomcM" target="_blank" rel="nofollow" class="btn-cta-price">✅ Quero Garantir Agora</a>
+    <div class="guarantee">
+      <span class="guarantee-icon">🛡️</span>
+      <p class="guarantee-text">Compra 100% segura pela Kiwify<br>Garantia de 7 dias ou seu dinheiro de volta</p>
+    </div>
+    <img
+      src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=61,fit=crop/UiAmj3MFyvqnuzXx/pagamento-seguro-YleqLnzg7DTy39wp.webp"
+      alt="Selos de pagamento seguro"
+      class="secure-seal"
+      loading="lazy"
+    >
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <h3>Dúvidas Frequentes</h3>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h6>📦 O que é um pack?</h6>
+        <p>É um conjunto de artes prontas e editáveis. Nos nossos packs você personaliza do seu jeito, rápido e fácil.</p>
+      </div>
+      <div class="faq-item">
+        <h6>🎨 Precisa ter Canva Pro?</h6>
+        <p>Não! Tudo é editável no Canva gratuito. As artes já vêm prontas para imprimir em papel fotográfico ou couchê A4.</p>
+      </div>
+      <div class="faq-item">
+        <h6>📩 Como faço para usar?</h6>
+        <p>Após a compra você recebe um link no e-mail com o pack completo e as instruções de uso.</p>
+      </div>
+      <div class="faq-item">
+        <h6>🔒 A compra é segura?</h6>
+        <p>100% segura! Vendemos pela plataforma Kiwify, com garantia de 7 dias e reembolso total se não gostar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <section class="disclaimer">
+    <p class="c-brown">⚠️ ESTE PACK NÃO É PLR</p>
+    <p class="c-brown">USO INDIVIDUAL</p>
+    <p class="c-dark">NÃO VENDEMOS MATERIAL IMPRESSO</p>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="about-section">
+    <p class="about-brand">MILIONS PACK</p>
+    <p class="about-bio">Apaixonada por design e fotografia há mais de 12 anos. Criamos artes únicas e personalizadas no Canva para transformar seus projetos com beleza e estilo.</p>
+    <a href="https://pay.kiwify.com.br/AcSC6Jg?afid=tSCPomcM" target="_blank" rel="nofollow" class="btn-cta-final">📂 Quero Adquirir os Arquivos</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Milions Pack © 2025 — Todos os direitos reservados</p>
+  </footer>
+
+</div>
+</body>
+</html>
